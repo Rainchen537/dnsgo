@@ -1,0 +1,1623 @@
+{
+  "date": "2026-10-18",
+  "timezone": "Asia/Shanghai",
+  "release": "v0.1.1",
+  "provider": "aliyun",
+  "run": "939dcde31c",
+  "started_at": "2026-10-18T07:12:07+08:00",
+  "finished_at": "2026-10-18T07:14:33+08:00",
+  "assessment": {
+    "passed_cases": 82,
+    "blocked_by_ownership_verification": 2,
+    "unresolved_sdk_failures": 0,
+    "raw_runner_exit_code": 1,
+    "raw_runner_failed_cases": 2,
+    "note": "The runner treated all provider rejections as failures. Both remaining rejected cases were AddDomain ownership-verification prerequisites (Txt.Record.Expired); they are retained below as raw failures and assessed as blocked, not passed."
+  },
+  "source_files_sha256": {
+    "dns.go": "0d8fe35b8aa90f61f363baac82aa95fb359d5bf052603b357c0072d9239655ae",
+    "dns_test.go": "c5c835cde9ed185ba690a628e4e29841ecd438190e87e0a5d503a99782e714e3",
+    "providers/aliyun.go": "7397c8e4a732705fc1ed296d79d1ccee01f0b431f7dec916f31819f2958e4122",
+    "providers/aliyun_extensions.go": "3d69bc165a8b7fc0ccbc8d83d695c8509e5f4821daa7ed6d2f05c4b9a8b23c12"
+  },
+  "credentials": "Read-only database query over SSH; secrets remained only in process memory. No secrets or original business-record values are included in this evidence.",
+  "temporary_records_created_and_deleted": 66,
+  "cleanup": [
+    {
+      "account": 2,
+      "after_count": 5,
+      "after_sha256": "3cb8954736dbb9c0cf962bf1dfe6ff51c7071a7242a40b438443162c52d1a5e8",
+      "before_count": 5,
+      "before_sha256": "3cb8954736dbb9c0cf962bf1dfe6ff51c7071a7242a40b438443162c52d1a5e8",
+      "created": 33,
+      "ok": true,
+      "original_unchanged": true,
+      "test": "cleanup",
+      "time": "2026-10-17T23:13:21Z"
+    },
+    {
+      "account": 3,
+      "after_count": 110,
+      "after_sha256": "d68e00adee65b2157785f34cc8da5cce88f566f2afc984bf5ac58bf24faa7ef6",
+      "before_count": 110,
+      "before_sha256": "d68e00adee65b2157785f34cc8da5cce88f566f2afc984bf5ac58bf24faa7ef6",
+      "created": 33,
+      "ok": true,
+      "original_unchanged": true,
+      "test": "cleanup",
+      "time": "2026-10-17T23:14:33Z"
+    }
+  ],
+  "additional_authority_checks": 20,
+  "boundaries": [
+    "Tests used two existing AliDNS configurations and random temporary records under their existing zones",
+    "Group changes were tested only for the existing default group (-2); no custom group was available",
+    "Weight writes were verified for A records; overall and default-line switches were independently checked; statistical DNS answer distribution was not measured",
+    "URL forwarding record APIs were verified; real HTTP redirect and frame rendering were not tested",
+    "New hosted subdomain creation returned Txt.Record.Expired before creation; ownership-verification/retrieval was not performed and no new zone remained",
+    "No paid order, upgrade, existing business-record write, server application configuration, database row or service change occurred",
+    "Cloud certificates, cloud deployment products, automatic tasks, failover, and injected transport failures were outside this DNS verification"
+  ],
+  "cases": [
+    {
+      "account": 2,
+      "detail": {
+        "domain_matches": true,
+        "min_ttl": 600,
+        "version": "mianfei"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "domain_details",
+      "time": "2026-10-17T23:12:08Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "count": 1,
+        "total": 1
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "zone_keyword_and_pagination",
+      "time": "2026-10-17T23:12:08Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "checks": [
+          {
+            "aa": true,
+            "answers": [],
+            "name": "dnsgo-extra-939dcde31c-status.xn--vcs832f.xn--io0a7i",
+            "ok": true,
+            "rcode": 3,
+            "server": "dns11.hichina.com",
+            "type": 16
+          },
+          {
+            "aa": true,
+            "answers": [],
+            "name": "dnsgo-extra-939dcde31c-status.xn--vcs832f.xn--io0a7i",
+            "ok": true,
+            "rcode": 3,
+            "server": "dns12.hichina.com",
+            "type": 16
+          }
+        ],
+        "ok": true
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "create_disabled",
+      "time": "2026-10-17T23:12:09Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "transitions": 3
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "status_enable_disable_enable",
+      "time": "2026-10-17T23:12:12Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "transitions": 2
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "update_disabled_and_enabled",
+      "time": "2026-10-17T23:12:13Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "set_and_clear": true
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "remark_set_chinese_and_clear",
+      "time": "2026-10-17T23:12:14Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "queries": 6
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "record_filters",
+      "time": "2026-10-17T23:12:14Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "count": 1
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "record_filters_disabled",
+      "time": "2026-10-17T23:12:15Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "rejection": {
+          "code": "provider_error",
+          "operation": "UpdateDomainRecord",
+          "request_id": "01A14C23-2C17-53DC-9743-7685FA75F750",
+          "vendor_code": "QuotaExceeded.TTL"
+        }
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "minimum_ttl_rejection",
+      "time": "2026-10-17T23:12:16Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "input": "10=0",
+        "returned": "telecom"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_10_0",
+      "time": "2026-10-17T23:12:17Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "input": "0",
+        "returned": "default"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_0",
+      "time": "2026-10-17T23:12:17Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "input": "default",
+        "returned": "default"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_default",
+      "time": "2026-10-17T23:12:18Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "input": "internal",
+        "returned": "internal"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_internal",
+      "time": "2026-10-17T23:12:19Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "input": "oversea",
+        "returned": "oversea"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_oversea",
+      "time": "2026-10-17T23:12:22Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "input": "mobile",
+        "returned": "mobile"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_mobile",
+      "time": "2026-10-17T23:12:23Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "input": "telecom",
+        "returned": "telecom"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_telecom",
+      "time": "2026-10-17T23:12:24Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "input": "unicom",
+        "returned": "unicom"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_unicom",
+      "time": "2026-10-17T23:12:25Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "input": "edu",
+        "returned": "edu"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_edu",
+      "time": "2026-10-17T23:12:26Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "input": "google",
+        "returned": "google"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_google",
+      "time": "2026-10-17T23:12:27Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "input": "baidu",
+        "returned": "baidu"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_baidu",
+      "time": "2026-10-17T23:12:28Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "input": "biying",
+        "returned": "biying"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_biying",
+      "time": "2026-10-17T23:12:29Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "input": "sougou",
+        "returned": "sougou"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_sougou",
+      "time": "2026-10-17T23:12:30Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "input": "qihu",
+        "returned": "qihu"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_qihu",
+      "time": "2026-10-17T23:12:31Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "input": "youdao",
+        "returned": "youdao"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_youdao",
+      "time": "2026-10-17T23:12:31Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "ID": "2111596250406594560",
+        "ZoneID": "国科.网络",
+        "Name": "dnsgo-extra-939dcde31c-typechange.国科.网络",
+        "Type": "AAAA",
+        "Value": "2001:db8::19",
+        "Values": null,
+        "TTL": 600,
+        "Priority": null,
+        "Weight": 1,
+        "Line": "default",
+        "Proxied": null,
+        "Enabled": true,
+        "Remark": "",
+        "ModifiedAt": "",
+        "Extra": null
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "record_type_change_A_to_AAAA",
+      "time": "2026-10-17T23:12:34Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "ID": "2111596259106093056",
+        "ZoneID": "国科.网络",
+        "Name": "dnsgo-extra-939dcde31c-srv.国科.网络",
+        "Type": "SRV",
+        "Value": "20 10 8443 srv.example.net",
+        "Values": null,
+        "TTL": 600,
+        "Priority": null,
+        "Weight": null,
+        "Line": "default",
+        "Proxied": null,
+        "Enabled": true,
+        "Remark": "",
+        "ModifiedAt": "",
+        "Extra": null
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "type_SRV",
+      "time": "2026-10-17T23:12:35Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "ID": "2111596265888149504",
+        "ZoneID": "国科.网络",
+        "Name": "dnsgo-extra-939dcde31c-caa.国科.网络",
+        "Type": "CAA",
+        "Value": "0 issuewild \"letsencrypt.org\"",
+        "Values": null,
+        "TTL": 600,
+        "Priority": null,
+        "Weight": null,
+        "Line": "default",
+        "Proxied": null,
+        "Enabled": true,
+        "Remark": "",
+        "ModifiedAt": "",
+        "Extra": null
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "type_CAA",
+      "time": "2026-10-17T23:12:37Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "ID": "2111596272020246528",
+        "ZoneID": "国科.网络",
+        "Name": "dnsgo-extra-939dcde31c-ns.国科.网络",
+        "Type": "NS",
+        "Value": "ns2.example.com",
+        "Values": null,
+        "TTL": 600,
+        "Priority": null,
+        "Weight": null,
+        "Line": "default",
+        "Proxied": null,
+        "Enabled": true,
+        "Remark": "",
+        "ModifiedAt": "",
+        "Extra": null
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "type_NS",
+      "time": "2026-10-17T23:12:38Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "ID": "2111596278999516160",
+        "ZoneID": "国科.网络",
+        "Name": "dnsgo-extra-939dcde31c-url.国科.网络",
+        "Type": "REDIRECT_URL",
+        "Value": "https://example.net",
+        "Values": null,
+        "TTL": 600,
+        "Priority": null,
+        "Weight": null,
+        "Line": "default",
+        "Proxied": null,
+        "Enabled": true,
+        "Remark": "",
+        "ModifiedAt": "",
+        "Extra": null
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "type_URL",
+      "time": "2026-10-17T23:12:41Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "ID": "2111596289141435392",
+        "ZoneID": "国科.网络",
+        "Name": "dnsgo-extra-939dcde31c-redirect.国科.网络",
+        "Type": "REDIRECT_URL",
+        "Value": "https://example.net",
+        "Values": null,
+        "TTL": 600,
+        "Priority": null,
+        "Weight": null,
+        "Line": "default",
+        "Proxied": null,
+        "Enabled": true,
+        "Remark": "",
+        "ModifiedAt": "",
+        "Extra": null
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "type_REDIRECT_URL",
+      "time": "2026-10-17T23:12:43Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "ID": "2111596298104616960",
+        "ZoneID": "国科.网络",
+        "Name": "dnsgo-extra-939dcde31c-forward.国科.网络",
+        "Type": "FORWARD_URL",
+        "Value": "http://example.net",
+        "Values": null,
+        "TTL": 600,
+        "Priority": null,
+        "Weight": null,
+        "Line": "default",
+        "Proxied": null,
+        "Enabled": true,
+        "Remark": "",
+        "ModifiedAt": "",
+        "Extra": null
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "type_FORWARD_URL",
+      "time": "2026-10-17T23:12:46Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "directions": 2,
+        "page_size": 1
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "record_sorting_and_small_pages",
+      "time": "2026-10-17T23:12:47Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "group_count": 2,
+        "group_filtered_readback_found": true,
+        "target_id": "-2"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "groups_list_and_move",
+      "time": "2026-10-17T23:12:48Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "common_create_weight": 17,
+        "common_update_weight": 37,
+        "records": 3
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "weights_enable_update_disable",
+      "time": "2026-10-17T23:12:56Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "deleted": 3,
+        "neighbor_preserved": true
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "bulk_delete_exact_subdomain",
+      "time": "2026-10-17T23:12:59Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "ID": "2111596366228604928",
+        "ZoneID": "国科.网络",
+        "Name": "dnsgo-extra-939dcde31c-single.国科.网络",
+        "Type": "TXT",
+        "Value": "dnsgo-extra-939dcde31c-single",
+        "Values": null,
+        "TTL": 600,
+        "Priority": null,
+        "Weight": null,
+        "Line": "default",
+        "Proxied": null,
+        "Enabled": true,
+        "Remark": "",
+        "ModifiedAt": "",
+        "Extra": null
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "single_value_and_default_ttl",
+      "time": "2026-10-17T23:13:00Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "ID": "2111596368657000448",
+        "ZoneID": "国科.网络",
+        "Name": "*.dnsgo-extra-939dcde31c-wild.国科.网络",
+        "Type": "TXT",
+        "Value": "dnsgo-extra-939dcde31c-wild",
+        "Values": null,
+        "TTL": 600,
+        "Priority": null,
+        "Weight": null,
+        "Line": "default",
+        "Proxied": null,
+        "Enabled": true,
+        "Remark": "",
+        "ModifiedAt": "",
+        "Extra": null
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "wildcard_record",
+      "time": "2026-10-17T23:13:00Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "checks": [
+          {
+            "aa": true,
+            "answers": [
+              {
+                "name": "host.dnsgo-extra-939dcde31c-wild.xn--vcs832f.xn--io0a7i",
+                "ttl": 600,
+                "type": 16,
+                "value": "dnsgo-extra-939dcde31c-wild"
+              }
+            ],
+            "name": "host.dnsgo-extra-939dcde31c-wild.xn--vcs832f.xn--io0a7i",
+            "ok": true,
+            "rcode": 0,
+            "server": "dns11.hichina.com",
+            "type": 16
+          },
+          {
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-extra-939dcde31c-srv.xn--vcs832f.xn--io0a7i",
+                "ttl": 600,
+                "type": 33,
+                "value": "20 10 8443 srv.example.net"
+              }
+            ],
+            "name": "dnsgo-extra-939dcde31c-srv.xn--vcs832f.xn--io0a7i",
+            "ok": true,
+            "rcode": 0,
+            "server": "dns11.hichina.com",
+            "type": 33
+          },
+          {
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-extra-939dcde31c-caa.xn--vcs832f.xn--io0a7i",
+                "ttl": 600,
+                "type": 257,
+                "value": "0 issuewild \"letsencrypt.org\""
+              }
+            ],
+            "name": "dnsgo-extra-939dcde31c-caa.xn--vcs832f.xn--io0a7i",
+            "ok": true,
+            "rcode": 0,
+            "server": "dns11.hichina.com",
+            "type": 257
+          },
+          {
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-extra-939dcde31c-status.xn--vcs832f.xn--io0a7i",
+                "ttl": 600,
+                "type": 16,
+                "value": "dnsgo-extra-939dcde31c-update-true"
+              }
+            ],
+            "name": "dnsgo-extra-939dcde31c-status.xn--vcs832f.xn--io0a7i",
+            "ok": true,
+            "rcode": 0,
+            "server": "dns11.hichina.com",
+            "type": 16
+          },
+          {
+            "aa": true,
+            "answers": [
+              {
+                "name": "host.dnsgo-extra-939dcde31c-wild.xn--vcs832f.xn--io0a7i",
+                "ttl": 600,
+                "type": 16,
+                "value": "dnsgo-extra-939dcde31c-wild"
+              }
+            ],
+            "name": "host.dnsgo-extra-939dcde31c-wild.xn--vcs832f.xn--io0a7i",
+            "ok": true,
+            "rcode": 0,
+            "server": "dns12.hichina.com",
+            "type": 16
+          },
+          {
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-extra-939dcde31c-srv.xn--vcs832f.xn--io0a7i",
+                "ttl": 600,
+                "type": 33,
+                "value": "20 10 8443 srv.example.net"
+              }
+            ],
+            "name": "dnsgo-extra-939dcde31c-srv.xn--vcs832f.xn--io0a7i",
+            "ok": true,
+            "rcode": 0,
+            "server": "dns12.hichina.com",
+            "type": 33
+          },
+          {
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-extra-939dcde31c-caa.xn--vcs832f.xn--io0a7i",
+                "ttl": 600,
+                "type": 257,
+                "value": "0 issuewild \"letsencrypt.org\""
+              }
+            ],
+            "name": "dnsgo-extra-939dcde31c-caa.xn--vcs832f.xn--io0a7i",
+            "ok": true,
+            "rcode": 0,
+            "server": "dns12.hichina.com",
+            "type": 257
+          },
+          {
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-extra-939dcde31c-status.xn--vcs832f.xn--io0a7i",
+                "ttl": 600,
+                "type": 16,
+                "value": "dnsgo-extra-939dcde31c-update-true"
+              }
+            ],
+            "name": "dnsgo-extra-939dcde31c-status.xn--vcs832f.xn--io0a7i",
+            "ok": true,
+            "rcode": 0,
+            "server": "dns12.hichina.com",
+            "type": 16
+          }
+        ],
+        "ok": true
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "authority_extra_records",
+      "time": "2026-10-17T23:13:01Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": null,
+      "error": {
+        "code": "provider_error",
+        "operation": "AddDomain",
+        "request_id": "01A14C23-DE6C-5F0B-9035-D68679DEC217",
+        "vendor_code": "Txt.Record.Expired"
+      },
+      "status": "fail",
+      "test": "create_temporary_zone_and_cleanup",
+      "time": "2026-10-17T23:13:01Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "all_actions_populated": true,
+        "returned": 61,
+        "total": 61
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "operation_logs_keyword_and_dates",
+      "time": "2026-10-17T23:13:02Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "rejection": {
+          "code": "not_found",
+          "operation": "DescribeDomainRecords",
+          "request_id": "01A14C23-E091-573C-A266-67507C2FE413",
+          "vendor_code": "InvalidDomainName.NoExist"
+        }
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "missing_zone_error",
+      "time": "2026-10-17T23:13:02Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 2,
+      "detail": {
+        "cases": 7
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "input_rejections_without_record_writes",
+      "time": "2026-10-17T23:13:02Z",
+      "zone": "国科.网络"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "domain_matches": true,
+        "min_ttl": 600,
+        "version": "mianfei"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "domain_details",
+      "time": "2026-10-17T23:13:22Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "count": 1,
+        "total": 1
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "zone_keyword_and_pagination",
+      "time": "2026-10-17T23:13:22Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "checks": [
+          {
+            "aa": true,
+            "answers": [],
+            "name": "dnsgo-extra-939dcde31c-status.edu2026.cn",
+            "ok": true,
+            "rcode": 3,
+            "server": "dns3.hichina.com",
+            "type": 16
+          },
+          {
+            "aa": true,
+            "answers": [],
+            "name": "dnsgo-extra-939dcde31c-status.edu2026.cn",
+            "ok": true,
+            "rcode": 3,
+            "server": "dns4.hichina.com",
+            "type": 16
+          }
+        ],
+        "ok": true
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "create_disabled",
+      "time": "2026-10-17T23:13:24Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "transitions": 3
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "status_enable_disable_enable",
+      "time": "2026-10-17T23:13:26Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "transitions": 2
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "update_disabled_and_enabled",
+      "time": "2026-10-17T23:13:28Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "set_and_clear": true
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "remark_set_chinese_and_clear",
+      "time": "2026-10-17T23:13:29Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "queries": 6
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "record_filters",
+      "time": "2026-10-17T23:13:29Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "count": 1
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "record_filters_disabled",
+      "time": "2026-10-17T23:13:30Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "rejection": {
+          "code": "provider_error",
+          "operation": "UpdateDomainRecord",
+          "request_id": "01A14C24-50A4-50BE-B61C-8F9FF422B240",
+          "vendor_code": "QuotaExceeded.TTL"
+        }
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "minimum_ttl_rejection",
+      "time": "2026-10-17T23:13:30Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "input": "10=0",
+        "returned": "telecom"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_10_0",
+      "time": "2026-10-17T23:13:32Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "input": "0",
+        "returned": "default"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_0",
+      "time": "2026-10-17T23:13:33Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "input": "default",
+        "returned": "default"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_default",
+      "time": "2026-10-17T23:13:34Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "input": "internal",
+        "returned": "internal"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_internal",
+      "time": "2026-10-17T23:13:35Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "input": "oversea",
+        "returned": "oversea"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_oversea",
+      "time": "2026-10-17T23:13:36Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "input": "mobile",
+        "returned": "mobile"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_mobile",
+      "time": "2026-10-17T23:13:36Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "input": "telecom",
+        "returned": "telecom"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_telecom",
+      "time": "2026-10-17T23:13:37Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "input": "unicom",
+        "returned": "unicom"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_unicom",
+      "time": "2026-10-17T23:13:39Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "input": "edu",
+        "returned": "edu"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_edu",
+      "time": "2026-10-17T23:13:39Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "input": "google",
+        "returned": "google"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_google",
+      "time": "2026-10-17T23:13:40Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "input": "baidu",
+        "returned": "baidu"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_baidu",
+      "time": "2026-10-17T23:13:41Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "input": "biying",
+        "returned": "biying"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_biying",
+      "time": "2026-10-17T23:13:42Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "input": "sougou",
+        "returned": "sougou"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_sougou",
+      "time": "2026-10-17T23:13:43Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "input": "qihu",
+        "returned": "qihu"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_qihu",
+      "time": "2026-10-17T23:13:44Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "input": "youdao",
+        "returned": "youdao"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "line_youdao",
+      "time": "2026-10-17T23:13:45Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "ID": "2111596558545339392",
+        "ZoneID": "edu2026.cn",
+        "Name": "dnsgo-extra-939dcde31c-typechange.edu2026.cn",
+        "Type": "AAAA",
+        "Value": "2001:db8::19",
+        "Values": null,
+        "TTL": 600,
+        "Priority": null,
+        "Weight": 1,
+        "Line": "default",
+        "Proxied": null,
+        "Enabled": true,
+        "Remark": "",
+        "ModifiedAt": "",
+        "Extra": null
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "record_type_change_A_to_AAAA",
+      "time": "2026-10-17T23:13:47Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "ID": "2111596566544207872",
+        "ZoneID": "edu2026.cn",
+        "Name": "dnsgo-extra-939dcde31c-srv.edu2026.cn",
+        "Type": "SRV",
+        "Value": "20 10 8443 srv.example.net",
+        "Values": null,
+        "TTL": 600,
+        "Priority": null,
+        "Weight": null,
+        "Line": "default",
+        "Proxied": null,
+        "Enabled": true,
+        "Remark": "",
+        "ModifiedAt": "",
+        "Extra": null
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "type_SRV",
+      "time": "2026-10-17T23:13:48Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "ID": "2111596571237657600",
+        "ZoneID": "edu2026.cn",
+        "Name": "dnsgo-extra-939dcde31c-caa.edu2026.cn",
+        "Type": "CAA",
+        "Value": "0 issuewild \"letsencrypt.org\"",
+        "Values": null,
+        "TTL": 600,
+        "Priority": null,
+        "Weight": null,
+        "Line": "default",
+        "Proxied": null,
+        "Enabled": true,
+        "Remark": "",
+        "ModifiedAt": "",
+        "Extra": null
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "type_CAA",
+      "time": "2026-10-17T23:13:49Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "ID": "2111596576413519872",
+        "ZoneID": "edu2026.cn",
+        "Name": "dnsgo-extra-939dcde31c-ns.edu2026.cn",
+        "Type": "NS",
+        "Value": "ns2.example.com",
+        "Values": null,
+        "TTL": 600,
+        "Priority": null,
+        "Weight": null,
+        "Line": "default",
+        "Proxied": null,
+        "Enabled": true,
+        "Remark": "",
+        "ModifiedAt": "",
+        "Extra": null
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "type_NS",
+      "time": "2026-10-17T23:13:51Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "ID": "2111596583992579072",
+        "ZoneID": "edu2026.cn",
+        "Name": "dnsgo-extra-939dcde31c-url.edu2026.cn",
+        "Type": "REDIRECT_URL",
+        "Value": "https://example.net",
+        "Values": null,
+        "TTL": 600,
+        "Priority": null,
+        "Weight": null,
+        "Line": "default",
+        "Proxied": null,
+        "Enabled": true,
+        "Remark": "",
+        "ModifiedAt": "",
+        "Extra": null
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "type_URL",
+      "time": "2026-10-17T23:13:53Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "ID": "2111596592297226240",
+        "ZoneID": "edu2026.cn",
+        "Name": "dnsgo-extra-939dcde31c-redirect.edu2026.cn",
+        "Type": "REDIRECT_URL",
+        "Value": "https://example.net",
+        "Values": null,
+        "TTL": 600,
+        "Priority": null,
+        "Weight": null,
+        "Line": "default",
+        "Proxied": null,
+        "Enabled": true,
+        "Remark": "",
+        "ModifiedAt": "",
+        "Extra": null
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "type_REDIRECT_URL",
+      "time": "2026-10-17T23:13:55Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "ID": "2111596601478723584",
+        "ZoneID": "edu2026.cn",
+        "Name": "dnsgo-extra-939dcde31c-forward.edu2026.cn",
+        "Type": "FORWARD_URL",
+        "Value": "http://example.net",
+        "Values": null,
+        "TTL": 600,
+        "Priority": null,
+        "Weight": null,
+        "Line": "default",
+        "Proxied": null,
+        "Enabled": true,
+        "Remark": "",
+        "ModifiedAt": "",
+        "Extra": null
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "type_FORWARD_URL",
+      "time": "2026-10-17T23:13:58Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "directions": 2,
+        "page_size": 1
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "record_sorting_and_small_pages",
+      "time": "2026-10-17T23:13:58Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "group_count": 2,
+        "group_filtered_readback_found": true,
+        "target_id": "-2"
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "groups_list_and_move",
+      "time": "2026-10-17T23:13:59Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "common_create_weight": 17,
+        "common_update_weight": 37,
+        "records": 3
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "weights_enable_update_disable",
+      "time": "2026-10-17T23:14:07Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "deleted": 3,
+        "neighbor_preserved": true
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "bulk_delete_exact_subdomain",
+      "time": "2026-10-17T23:14:11Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "ID": "2111596668021283840",
+        "ZoneID": "edu2026.cn",
+        "Name": "dnsgo-extra-939dcde31c-single.edu2026.cn",
+        "Type": "TXT",
+        "Value": "dnsgo-extra-939dcde31c-single",
+        "Values": null,
+        "TTL": 600,
+        "Priority": null,
+        "Weight": null,
+        "Line": "default",
+        "Proxied": null,
+        "Enabled": true,
+        "Remark": "",
+        "ModifiedAt": "",
+        "Extra": null
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "single_value_and_default_ttl",
+      "time": "2026-10-17T23:14:12Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "ID": "2111596670948872192",
+        "ZoneID": "edu2026.cn",
+        "Name": "*.dnsgo-extra-939dcde31c-wild.edu2026.cn",
+        "Type": "TXT",
+        "Value": "dnsgo-extra-939dcde31c-wild",
+        "Values": null,
+        "TTL": 600,
+        "Priority": null,
+        "Weight": null,
+        "Line": "default",
+        "Proxied": null,
+        "Enabled": true,
+        "Remark": "",
+        "ModifiedAt": "",
+        "Extra": null
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "wildcard_record",
+      "time": "2026-10-17T23:14:13Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "checks": [
+          {
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-extra-939dcde31c-caa.edu2026.cn",
+                "ttl": 600,
+                "type": 257,
+                "value": "0 issuewild \"letsencrypt.org\""
+              }
+            ],
+            "name": "dnsgo-extra-939dcde31c-caa.edu2026.cn",
+            "ok": true,
+            "rcode": 0,
+            "server": "dns3.hichina.com",
+            "type": 257
+          },
+          {
+            "aa": true,
+            "answers": [
+              {
+                "name": "host.dnsgo-extra-939dcde31c-wild.edu2026.cn",
+                "ttl": 600,
+                "type": 16,
+                "value": "dnsgo-extra-939dcde31c-wild"
+              }
+            ],
+            "name": "host.dnsgo-extra-939dcde31c-wild.edu2026.cn",
+            "ok": true,
+            "rcode": 0,
+            "server": "dns3.hichina.com",
+            "type": 16
+          },
+          {
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-extra-939dcde31c-srv.edu2026.cn",
+                "ttl": 600,
+                "type": 33,
+                "value": "20 10 8443 srv.example.net"
+              }
+            ],
+            "name": "dnsgo-extra-939dcde31c-srv.edu2026.cn",
+            "ok": true,
+            "rcode": 0,
+            "server": "dns3.hichina.com",
+            "type": 33
+          },
+          {
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-extra-939dcde31c-status.edu2026.cn",
+                "ttl": 600,
+                "type": 16,
+                "value": "dnsgo-extra-939dcde31c-update-true"
+              }
+            ],
+            "name": "dnsgo-extra-939dcde31c-status.edu2026.cn",
+            "ok": true,
+            "rcode": 0,
+            "server": "dns3.hichina.com",
+            "type": 16
+          },
+          {
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-extra-939dcde31c-caa.edu2026.cn",
+                "ttl": 600,
+                "type": 257,
+                "value": "0 issuewild \"letsencrypt.org\""
+              }
+            ],
+            "name": "dnsgo-extra-939dcde31c-caa.edu2026.cn",
+            "ok": true,
+            "rcode": 0,
+            "server": "dns4.hichina.com",
+            "type": 257
+          },
+          {
+            "aa": true,
+            "answers": [
+              {
+                "name": "host.dnsgo-extra-939dcde31c-wild.edu2026.cn",
+                "ttl": 600,
+                "type": 16,
+                "value": "dnsgo-extra-939dcde31c-wild"
+              }
+            ],
+            "name": "host.dnsgo-extra-939dcde31c-wild.edu2026.cn",
+            "ok": true,
+            "rcode": 0,
+            "server": "dns4.hichina.com",
+            "type": 16
+          },
+          {
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-extra-939dcde31c-srv.edu2026.cn",
+                "ttl": 600,
+                "type": 33,
+                "value": "20 10 8443 srv.example.net"
+              }
+            ],
+            "name": "dnsgo-extra-939dcde31c-srv.edu2026.cn",
+            "ok": true,
+            "rcode": 0,
+            "server": "dns4.hichina.com",
+            "type": 33
+          },
+          {
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-extra-939dcde31c-status.edu2026.cn",
+                "ttl": 600,
+                "type": 16,
+                "value": "dnsgo-extra-939dcde31c-update-true"
+              }
+            ],
+            "name": "dnsgo-extra-939dcde31c-status.edu2026.cn",
+            "ok": true,
+            "rcode": 0,
+            "server": "dns4.hichina.com",
+            "type": 16
+          }
+        ],
+        "ok": true
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "authority_extra_records",
+      "time": "2026-10-17T23:14:14Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": null,
+      "error": {
+        "code": "provider_error",
+        "operation": "AddDomain",
+        "request_id": "01A14C24-FA37-55DF-9FD6-BC1E0C91B0B2",
+        "vendor_code": "Txt.Record.Expired"
+      },
+      "status": "fail",
+      "test": "create_temporary_zone_and_cleanup",
+      "time": "2026-10-17T23:14:14Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "all_actions_populated": true,
+        "returned": 59,
+        "total": 59
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "operation_logs_keyword_and_dates",
+      "time": "2026-10-17T23:14:14Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "rejection": {
+          "code": "not_found",
+          "operation": "DescribeDomainRecords",
+          "request_id": "01A14C24-FC39-5EEF-8E1E-4FC18B62635E",
+          "vendor_code": "InvalidDomainName.NoExist"
+        }
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "missing_zone_error",
+      "time": "2026-10-17T23:14:14Z",
+      "zone": "edu2026.cn"
+    },
+    {
+      "account": 3,
+      "detail": {
+        "cases": 7
+      },
+      "error": "<nil>",
+      "status": "pass",
+      "test": "input_rejections_without_record_writes",
+      "time": "2026-10-17T23:14:14Z",
+      "zone": "edu2026.cn"
+    }
+  ],
+  "final_readback": {
+    "completed_at": "2026-10-18T07:15:20+08:00",
+    "temporary_record_ids_confirmed_absent": 86,
+    "original_records_unchanged": true,
+    "no_temporary_zones": true
+  }
+}

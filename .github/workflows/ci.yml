@@ -1,0 +1,43 @@
+name: Go and source coverage
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: recursive
+          persist-credentials: false
+      - uses: actions/setup-go@v7
+        with:
+          go-version: '1.24.x'
+          cache: true
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Format and dependency integrity
+        run: |
+          go fmt ./...
+          git diff --exit-code
+          go mod verify
+      - name: Compile and static analysis
+        run: |
+          go test ./...
+          go vet ./...
+      - name: Compare Rainbow DNS inventory
+        run: |
+          python3 scripts/upstream_inventory.py --check
+          python3 scripts/config_keys.py --check
+          python3 scripts/check_go_coverage.py
+      - name: Build resident agent for Linux and Apple Silicon
+        run: |
+          mkdir -p build
+          GOOS=linux GOARCH=amd64 go build -o build/dnsgo-agent-linux-amd64 ./cmd/dnsgo-agent
+          GOOS=darwin GOARCH=arm64 go build -o build/dnsgo-agent-darwin-arm64 ./cmd/dnsgo-agent

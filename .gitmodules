@@ -1,0 +1,3 @@
+[submodule "reference/dnsmgr"]
+	path = reference/dnsmgr
+	url = https://github.com/netcccyun/dnsmgr.git

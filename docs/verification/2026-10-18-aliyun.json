@@ -1,0 +1,448 @@
+{
+  "date": "2026-10-18",
+  "timezone": "Asia/Shanghai",
+  "provider": "aliyun",
+  "verified_local_changes": [
+    "AliDNS missing-record and missing-domain vendor codes map to not_found; ambiguous 408/5xx precedence retained",
+    "FindZone compares Unicode and Punycode names while preserving the provider zone name and ID"
+  ],
+  "credential_handling": "Existing Rainbow DNS database queried in a read-only transaction; credentials transferred over SSH into local process memory and never written to project files or this evidence",
+  "record_types": [
+    "A",
+    "AAAA",
+    "CNAME",
+    "TXT",
+    "MX"
+  ],
+  "write_checks": [
+    "create and GetRecord readback",
+    "edit name, value, TTL 600 to 900, and remark",
+    "edit MX priority 10 to 20",
+    "old name no longer contains test record",
+    "exact TXT subdomain lookup",
+    "owned-record deletion and not_found readback"
+  ],
+  "initial_run": {
+    "started_at": "2026-10-18T06:03:29+08:00",
+    "finished_at": "2026-10-18T06:03:56+08:00",
+    "run": "4a5057a704",
+    "created": 10,
+    "edited": 10,
+    "deleted": 10,
+    "finding": "Deleted-record GetRecord returned InvalidRR.NoExist as provider_error; cleanup checks flagged classification although both complete original record snapshots matched"
+  },
+  "corrected_run": {
+    "started_at": "2026-10-18T06:04:56+08:00",
+    "finished_at": "2026-10-18T06:05:24+08:00",
+    "run": "04ee8ea762",
+    "ok": true,
+    "created": 10,
+    "edited": 10,
+    "deleted": 10
+  },
+  "zones": [
+    {
+      "name": "国科.网络",
+      "ascii_name": "xn--vcs832f.xn--io0a7i",
+      "original_record_count": 5,
+      "read_pages_at_page_size_20": 1,
+      "min_ttl": 600,
+      "line_count": 13,
+      "baseline_sha256": "3cb8954736dbb9c0cf962bf1dfe6ff51c7071a7242a40b438443162c52d1a5e8",
+      "final_record_count": 5,
+      "original_records_unchanged": true,
+      "all_temporary_records_deleted": true,
+      "unicode_punycode_lookup_ok": true,
+      "authority": {
+        "zone": "xn--vcs832f.xn--io0a7i",
+        "ok": true,
+        "checks": [
+          {
+            "server": "dns11.hichina.com",
+            "ip": "47.118.199.202",
+            "type": "A",
+            "ok": true,
+            "attempts": 1,
+            "rcode": 0,
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-verify-04ee8ea762-a-edited.xn--vcs832f.xn--io0a7i",
+                "type": 1,
+                "ttl": 900,
+                "value": "192.0.2.124"
+              }
+            ]
+          },
+          {
+            "server": "dns11.hichina.com",
+            "ip": "47.118.199.202",
+            "type": "AAAA",
+            "ok": true,
+            "attempts": 1,
+            "rcode": 0,
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-verify-04ee8ea762-aaaa-edited.xn--vcs832f.xn--io0a7i",
+                "type": 28,
+                "ttl": 900,
+                "value": "2001:db8::124"
+              }
+            ]
+          },
+          {
+            "server": "dns11.hichina.com",
+            "ip": "47.118.199.202",
+            "type": "CNAME",
+            "ok": true,
+            "attempts": 1,
+            "rcode": 0,
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-verify-04ee8ea762-cname-edited.xn--vcs832f.xn--io0a7i",
+                "type": 5,
+                "ttl": 900,
+                "value": "example.net"
+              }
+            ]
+          },
+          {
+            "server": "dns11.hichina.com",
+            "ip": "47.118.199.202",
+            "type": "TXT",
+            "ok": true,
+            "attempts": 1,
+            "rcode": 0,
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-verify-04ee8ea762-txt-edited.xn--vcs832f.xn--io0a7i",
+                "type": 16,
+                "ttl": 900,
+                "value": "dnsgo-04ee8ea762-v2"
+              }
+            ]
+          },
+          {
+            "server": "dns11.hichina.com",
+            "ip": "47.118.199.202",
+            "type": "MX",
+            "ok": true,
+            "attempts": 1,
+            "rcode": 0,
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-verify-04ee8ea762-mx-edited.xn--vcs832f.xn--io0a7i",
+                "type": 15,
+                "ttl": 900,
+                "value": "20 mail.example.net"
+              }
+            ]
+          },
+          {
+            "server": "dns12.hichina.com",
+            "ip": "47.118.199.201",
+            "type": "A",
+            "ok": true,
+            "attempts": 1,
+            "rcode": 0,
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-verify-04ee8ea762-a-edited.xn--vcs832f.xn--io0a7i",
+                "type": 1,
+                "ttl": 900,
+                "value": "192.0.2.124"
+              }
+            ]
+          },
+          {
+            "server": "dns12.hichina.com",
+            "ip": "47.118.199.201",
+            "type": "AAAA",
+            "ok": true,
+            "attempts": 1,
+            "rcode": 0,
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-verify-04ee8ea762-aaaa-edited.xn--vcs832f.xn--io0a7i",
+                "type": 28,
+                "ttl": 900,
+                "value": "2001:db8::124"
+              }
+            ]
+          },
+          {
+            "server": "dns12.hichina.com",
+            "ip": "47.118.199.201",
+            "type": "CNAME",
+            "ok": true,
+            "attempts": 1,
+            "rcode": 0,
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-verify-04ee8ea762-cname-edited.xn--vcs832f.xn--io0a7i",
+                "type": 5,
+                "ttl": 900,
+                "value": "example.net"
+              }
+            ]
+          },
+          {
+            "server": "dns12.hichina.com",
+            "ip": "47.118.199.201",
+            "type": "TXT",
+            "ok": true,
+            "attempts": 1,
+            "rcode": 0,
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-verify-04ee8ea762-txt-edited.xn--vcs832f.xn--io0a7i",
+                "type": 16,
+                "ttl": 900,
+                "value": "dnsgo-04ee8ea762-v2"
+              }
+            ]
+          },
+          {
+            "server": "dns12.hichina.com",
+            "ip": "47.118.199.201",
+            "type": "MX",
+            "ok": true,
+            "attempts": 1,
+            "rcode": 0,
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-verify-04ee8ea762-mx-edited.xn--vcs832f.xn--io0a7i",
+                "type": 15,
+                "ttl": 900,
+                "value": "20 mail.example.net"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "edu2026.cn",
+      "ascii_name": "edu2026.cn",
+      "original_record_count": 110,
+      "read_pages_at_page_size_20": 6,
+      "min_ttl": 600,
+      "line_count": 13,
+      "baseline_sha256": "d68e00adee65b2157785f34cc8da5cce88f566f2afc984bf5ac58bf24faa7ef6",
+      "final_record_count": 110,
+      "original_records_unchanged": true,
+      "all_temporary_records_deleted": true,
+      "unicode_punycode_lookup_ok": true,
+      "authority": {
+        "zone": "edu2026.cn",
+        "ok": true,
+        "checks": [
+          {
+            "server": "dns3.hichina.com",
+            "ip": "47.118.199.213",
+            "type": "A",
+            "ok": true,
+            "attempts": 1,
+            "rcode": 0,
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-verify-04ee8ea762-a-edited.edu2026.cn",
+                "type": 1,
+                "ttl": 900,
+                "value": "192.0.2.124"
+              }
+            ]
+          },
+          {
+            "server": "dns3.hichina.com",
+            "ip": "47.118.199.213",
+            "type": "AAAA",
+            "ok": true,
+            "attempts": 1,
+            "rcode": 0,
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-verify-04ee8ea762-aaaa-edited.edu2026.cn",
+                "type": 28,
+                "ttl": 900,
+                "value": "2001:db8::124"
+              }
+            ]
+          },
+          {
+            "server": "dns3.hichina.com",
+            "ip": "47.118.199.213",
+            "type": "CNAME",
+            "ok": true,
+            "attempts": 1,
+            "rcode": 0,
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-verify-04ee8ea762-cname-edited.edu2026.cn",
+                "type": 5,
+                "ttl": 900,
+                "value": "example.net"
+              }
+            ]
+          },
+          {
+            "server": "dns3.hichina.com",
+            "ip": "47.118.199.213",
+            "type": "TXT",
+            "ok": true,
+            "attempts": 1,
+            "rcode": 0,
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-verify-04ee8ea762-txt-edited.edu2026.cn",
+                "type": 16,
+                "ttl": 900,
+                "value": "dnsgo-04ee8ea762-v2"
+              }
+            ]
+          },
+          {
+            "server": "dns3.hichina.com",
+            "ip": "47.118.199.213",
+            "type": "MX",
+            "ok": true,
+            "attempts": 1,
+            "rcode": 0,
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-verify-04ee8ea762-mx-edited.edu2026.cn",
+                "type": 15,
+                "ttl": 900,
+                "value": "20 mail.example.net"
+              }
+            ]
+          },
+          {
+            "server": "dns4.hichina.com",
+            "ip": "47.118.199.214",
+            "type": "A",
+            "ok": true,
+            "attempts": 1,
+            "rcode": 0,
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-verify-04ee8ea762-a-edited.edu2026.cn",
+                "type": 1,
+                "ttl": 900,
+                "value": "192.0.2.124"
+              }
+            ]
+          },
+          {
+            "server": "dns4.hichina.com",
+            "ip": "47.118.199.214",
+            "type": "AAAA",
+            "ok": true,
+            "attempts": 1,
+            "rcode": 0,
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-verify-04ee8ea762-aaaa-edited.edu2026.cn",
+                "type": 28,
+                "ttl": 900,
+                "value": "2001:db8::124"
+              }
+            ]
+          },
+          {
+            "server": "dns4.hichina.com",
+            "ip": "47.118.199.214",
+            "type": "CNAME",
+            "ok": true,
+            "attempts": 1,
+            "rcode": 0,
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-verify-04ee8ea762-cname-edited.edu2026.cn",
+                "type": 5,
+                "ttl": 900,
+                "value": "example.net"
+              }
+            ]
+          },
+          {
+            "server": "dns4.hichina.com",
+            "ip": "47.118.199.214",
+            "type": "TXT",
+            "ok": true,
+            "attempts": 1,
+            "rcode": 0,
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-verify-04ee8ea762-txt-edited.edu2026.cn",
+                "type": 16,
+                "ttl": 900,
+                "value": "dnsgo-04ee8ea762-v2"
+              }
+            ]
+          },
+          {
+            "server": "dns4.hichina.com",
+            "ip": "47.118.199.214",
+            "type": "MX",
+            "ok": true,
+            "attempts": 1,
+            "rcode": 0,
+            "aa": true,
+            "answers": [
+              {
+                "name": "dnsgo-verify-04ee8ea762-mx-edited.edu2026.cn",
+                "type": 15,
+                "ttl": 900,
+                "value": "20 mail.example.net"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "final_readback": {
+    "finished_at": "2026-10-18T06:06:18+08:00",
+    "ok": true,
+    "total_deleted_record_ids_confirmed_absent": 20
+  },
+  "local_validation": [
+    "GOTOOLCHAIN=go1.24.0 go test ./...",
+    "GOTOOLCHAIN=go1.24.0 go vet ./...",
+    "python3 scripts/upstream_inventory.py --check",
+    "python3 scripts/config_keys.py --check",
+    "python3 scripts/check_go_coverage.py"
+  ],
+  "rainbow_dns_public_https_status": 200,
+  "boundaries": [
+    "Only two existing AliDNS credential sets were used",
+    "Writes confined to random temporary names in the two listed zones",
+    "Authority evidence covers the five edited records at two assigned nameservers per zone, from a remote machine",
+    "Unicode/Punycode equivalence verified for FindZone; subsequent operations reuse the provider-returned zone name and ID",
+    "Cloudflare, other DNS providers, non-default lines, record status toggles, SRV/CAA/NS/URL, zones creation, certificates, deployment, scheduled tasks, failure injection and consumer integration were not verified",
+    "No server application configuration, database rows or services were changed",
+    "No claim of global recursive-resolver convergence"
+  ],
+  "verification_baseline": "Initial implementation with the recorded fixes",
+  "follow_up_evidence": "2026-10-18-aliyun-extended.json",
+  "scope": "Initial basic DNS round; later capability verification is recorded in follow_up_evidence."
+}

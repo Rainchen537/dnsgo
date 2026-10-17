@@ -1,0 +1,80 @@
+# Copy this file outside the repository and replace example.invalid and IDs.
+# All service secrets are read from environment variables at startup.
+database: ${DNSGO_STATE_DB}
+interval_seconds: 60
+
+providers:
+  primary:
+    kind: cloudflare
+    domain: example.invalid
+    domain_id: replace-with-zone-id
+    # proxy_url: ${DNSGO_PROXY_URL}
+    credentials:
+      token: ${DNSGO_CF_TOKEN}
+
+failovers:
+  - id: website
+    provider: primary
+    mode: value
+    zone_id: replace-with-zone-id
+    record_id: replace-with-record-id
+    name: www
+    primary_value: 192.0.2.10
+    backup_value: 192.0.2.20
+    cycle: 2
+    probe:
+      kind: http
+      target: https://example.invalid/health
+      timeout_seconds: 5
+      # proxy_url: ${DNSGO_PROXY_URL}
+
+schedules:
+  - id: maintenance-enable
+    provider: primary
+    action: enable
+    cycle: once
+    zone_id: replace-with-zone-id
+    record_id: replace-with-maintenance-record-id
+    at: "2027-01-01T09:00:00+09:00"
+
+certificates:
+  - id: website-tls
+    authority: letsencrypt
+    email: certs@example.invalid
+    accept_terms: true
+    domains: [example.invalid, "*.example.invalid"]
+    key_algorithm: ECC
+    key_size: 256
+    renew_days: 7
+    propagation_minutes: 10
+    # proxy_url: ${DNSGO_PROXY_URL}
+    zones:
+      - name: example.invalid
+        id: replace-with-zone-id
+        provider: primary
+    deployments:
+      - id: local-web
+        target: local
+        # proxy_url: ${DNSGO_PROXY_URL}
+        values:
+          format: pem
+          pem_cert_file: /tmp/dnsgo-example-fullchain.pem
+          pem_key_file: /tmp/dnsgo-example-privkey.pem
+
+expiry:
+  domains: [example.invalid]
+  days: [30, 7, 3, 1]
+
+notifications:
+  - id: team-webhook
+    type: custom_webhook
+    # proxy_url: ${DNSGO_PROXY_URL}
+    failover: all
+    cert: all
+    expiry: all
+    values:
+      url: ${DNSGO_WEBHOOK_URL}
+      method: POST
+      content_type: application/json
+      format: text
+      body: '{"title":"{title}","content":"{content}"}'

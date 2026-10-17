@@ -1,0 +1,12 @@
+/bin/
+/build/
+/dist/
+/coverage/
+/data/
+/state/
+*.test
+*.prof
+__pycache__/
+*.pyc
+.env
+.DS_Store
