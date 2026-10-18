@@ -1,0 +1,22 @@
+{
+  "name": "dnsgo-wiki",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:check": "python3 scripts/check_docs_sync.py",
+    "docs:build": "vitepress build docs && node scripts/check_docs.mjs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "1.6.4"
+  },
+  "overrides": {
+    "vitepress": {
+      "vite": "6.4.4"
+    }
+  }
+}

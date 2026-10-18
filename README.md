@@ -1,5 +1,7 @@
 # DnsGo
 
+[项目 Wiki](https://rainchen537.github.io/dnsgo/) · [快速开始](docs/QUICKSTART.md) · [Go SDK 接入](docs/SDK.md) · [配置字段](docs/CONFIG-KEYS.md) · [适配器验证](docs/ADAPTER-COVERAGE.md)
+
 DnsGo 是一个可复用的 **Go 云 DNS 接入库**：Go 项目引入它后，可以通过一致的模型管理不同厂商的域名和解析记录，并按需使用故障切换、定时变更和证书能力。Go 项目可以调用 DnsGo 的 DNS 接口实现自己的 DDNS 逻辑。
 
 > **当前版本：`v0.1.1`（预发布）。** DnsGo 提供 22 家 DNS、8 类证书服务、50 类部署目标及可选常驻程序。阿里云 DNS 已通过两组真实账号的基础和扩展操作验证；其他厂商、CA、部署目标与使用方生产集成仍按各自证据标注。范围、修正与真实验证结果见[适配器验证记录](docs/ADAPTER-COVERAGE.md)和[实施状态](docs/IMPLEMENTATION.md)。彩虹 DNS 保存在 `reference/dnsmgr/` Git 子模块中，仅供参考并跟随官方上游更新。
@@ -153,6 +155,8 @@ Go 模块路径为 `github.com/rainchen537/dnsgo`。Go 项目可执行 `go get g
 DnsGo 根仓库中的原创内容采用 [MIT 许可证](LICENSE)。`reference/dnsmgr/` 是独立的上游 Git 子模块，其源码、署名和许可由原项目维护；DnsGo 的许可证不替它重新授权。上游仓库 `LICENSE` 与 `composer.json` 的许可标注差异及署名记录见[第三方来源与署名](THIRD_PARTY_NOTICES.md)。
 
 ## 文档分工与续写
+
+项目 Wiki 使用 VitePress，将本 README 和 `docs/` 中的文档发布到 GitHub Pages。[快速开始](docs/QUICKSTART.md)、[DNS 操作](docs/DNS-OPERATIONS.md)、[证书与部署](docs/CERTIFICATES.md)、[自动化与通知](docs/AUTOMATION.md)和[故障排查](docs/TROUBLESHOOTING.md)维护使用流程；[开发与发布](docs/CONTRIBUTING.md)及根目录 [AGENTS.md](AGENTS.md)约定代码与文章同提交更新。站点目录、预览、自动发布与续写规范见 [Wiki 维护](docs/WIKI.md)；本地使用 `npm ci`、`npm run docs:dev`，提交前运行 `npm run docs:check` 与 `npm run docs:build`。
 
 本 README 负责 DnsGo 的项目定位、当前可用状态、模块边界、集成关系和路线图。[上游源码盘点](docs/UPSTREAM-INVENTORY.md)只记录参考源码入口与静态标记，由 `scripts/upstream_inventory.py` 生成；[配置字段索引](docs/CONFIG-KEYS.md)只列 Go 适配器读取的字面量配置键，由 `scripts/config_keys.py` 生成；[实施与验证状态](docs/IMPLEMENTATION.md)记录 Go 总体进度；[适配器逐项验证记录](docs/ADAPTER-COVERAGE.md)记录每家源码对照和真实服务证据；[SDK 接入指南](docs/SDK.md)维护包的调用和数据语义；[常驻程序指南](docs/AGENT.md)维护配置、命令和恢复流程；[第三方来源与署名](THIRD_PARTY_NOTICES.md)记录参考项目和直接引入内容的许可通知。`reference/dnsmgr/README.md` 是上游 PHP 项目的安装说明，由其独立 Git 仓库维护。未来的决策记录应放在专门文档中，并从这里链接；同一事实只在一处维护。
 

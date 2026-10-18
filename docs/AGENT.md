@@ -1,6 +1,6 @@
 # DnsGo 常驻程序
 
-本文维护 `dnsgo-agent` 的配置、运行、状态和故障恢复。公共 Go API 由根目录 [README](../README.md) 与后续 API 文档维护；每家厂商的验证状态只在[实施状态](IMPLEMENTATION.md)记录。修改 YAML 字段、命令或状态机时先更新本文，再更新示例和 README 中的入口。
+本文维护 `dnsgo-agent` 的配置、运行、状态和故障恢复。公共 Go API 由 [SDK 接入指南](SDK.md)维护，模块流程见[证书与部署](CERTIFICATES.md)及[自动化与通知](AUTOMATION.md)；厂商证据由[适配器验证记录](ADAPTER-COVERAGE.md)维护，总体进度由[实施状态](IMPLEMENTATION.md)记录。修改 YAML 字段、命令或状态机时先更新本文，再更新示例和 README 中的入口。
 
 ## 安装与启动
 
