@@ -29,8 +29,9 @@
 }
 
 .VPHome .VPHero .image-src {
-  max-width: min(380px, calc(100vw - 48px));
-  max-height: 320px;
+  width: 248px;
+  height: 266px;
+  max-width: calc(100vw - 64px);
 }
 
 .VPHome .vp-doc {

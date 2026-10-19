@@ -45,12 +45,15 @@ npm run docs:preview
 | `docs/third-party.md` | 引用第三方通知 | 保留 include 指令，正文写入根通知文件 |
 | `docs/WIKI.md` | 文档站维护与发布 | 目录、脚本、依赖和工作流变更时更新本文 |
 | `docs/CONTRIBUTING.md` | 代码与文章同步、检查与交付顺序 | 检查脚本和 CI 变化时同步 |
+| `docs/BRAND.md` | 已确认标志、品牌素材与使用约定 | 图形、路径或使用方式变化时同步 |
 | 根目录 `AGENTS.md` | 仓库内自动化维护规则 | 项目工作规范变化时修订对应章节 |
 | `reference/dnsmgr/README.md` | 上游 PHP 安装说明 | 在上游独立仓库维护 |
 
 新文章直接放在 `docs/`，文件名保持稳定，并在 `.vitepress/config.mts` 的侧边栏中登记。首页常用入口按需补充。每篇文章开头说明维护范围与续写要求；同一事实保留一个维护位置，其他页面使用相对链接引用。
 
 根 README 和第三方通知通过 VitePress include 复用。站内 Markdown 链接保留 GitHub 阅读能力；站点构建时将仓库源码、示例等站外文件链接转换成 GitHub 地址，上游子模块链接指向根仓库锁定的上游提交。`docs/verification/` 中的脱敏 JSON 随站点构建发布；新增证据前先确认其中没有凭据或业务记录。
+
+品牌素材由[品牌素材](BRAND.md)维护。`public/favicon.svg` 是独立图形的唯一来源，导航、首页和浏览器图标共同使用；`public/brand/dnsgo-logo.png` 保留已确认的图文组合，供 README 与白底场景引用。
 
 ## GitHub Pages
 

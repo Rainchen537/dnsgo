@@ -4,8 +4,8 @@ hero:
   name: DnsGo
   text: Go DNS SDK
   image:
-    src: /dns-records.svg
-    alt: A、CNAME 与 TXT 解析记录
+    src: /favicon.svg
+    alt: DnsGo
   actions:
     - theme: brand
       text: 快速开始

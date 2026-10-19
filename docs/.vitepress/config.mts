@@ -33,6 +33,7 @@ export default defineConfig({
     }],
   },
   themeConfig: {
+    logo: { src: '/favicon.svg', alt: 'DnsGo' },
     siteTitle: 'DnsGo Wiki',
     nav: [
       { text: '接入', link: '/QUICKSTART' },
@@ -59,6 +60,7 @@ export default defineConfig({
         items: [
           { text: '配置字段', link: '/CONFIG-KEYS' },
           { text: '上游源码盘点', link: '/UPSTREAM-INVENTORY' },
+          { text: '品牌素材', link: '/BRAND' },
         ],
       },
       {
